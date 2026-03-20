@@ -125,13 +125,24 @@
     }
   </script>
 
-  <!-- File Upload -->
-  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 mt-6">
-    <h2 class="text-2xl font-semibold mb-4">Upload Your File</h2>
-    <input type="file" id="fileInput" class="w-full p-3 border rounded-xl mb-3">
-    <button onclick="uploadFile()" class="bg-purple-600 text-white px-6 py-2 rounded-xl">Send File Info</button>
-    <p class="text-sm mt-2">(File will be shared via WhatsApp message)</p>
-  </section>
+  <!-- Order Form -->
+<section class="p-8 bg-white rounded-3xl shadow-xl mx-4">
+  <h2 class="text-2xl font-semibold mb-4">Send Your Work</h2>
+  <form class="space-y-4">
+    <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-xl" required>
+    <input type="text" placeholder="Type of Work" class="w-full p-3 border rounded-xl" required>
+    <textarea placeholder="Describe your work" class="w-full p-3 border rounded-xl" required></textarea>
+
+    <!-- NEW LINE ADDED -->
+    <p class="text-sm text-gray-600">
+      📎 After submitting, please send your file directly on WhatsApp.
+    </p>
+
+    <button type="button" onclick="sendToWhatsApp()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow">
+      Submit
+    </button>
+  </form>
+</section>
 
   <!-- Invoice Generator -->
   <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 mt-6">
@@ -149,14 +160,6 @@
     <button onclick="trackOrder()" class="bg-blue-600 text-white px-4 py-2 rounded">Track</button>
     <p id="orderStatus" class="mt-3 text-sm"></p>
   </section>
-
-  <script>
-    function uploadFile() {
-      const file = document.getElementById('fileInput').files[0];
-      if (!file) return alert('Please select file');
-      const message = `File Name: ${file.name}`;
-      window.open(`https://wa.me/917085193286?text=${message}`, '_blank');
-    }
 
     function generateInvoice() {
       const client = document.getElementById('client').value;
