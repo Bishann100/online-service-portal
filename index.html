@@ -1,117 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Online Service Portal</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Service Portal | Typing, Forms, Resume & Editing Services</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Poppins', sans-serif; }
+    * { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(16,185,129,0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(59,130,246,0.12), transparent 25%),
+        linear-gradient(to bottom right, #f8fafc, #e5e7eb);
+    }
+    .glass {
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 35px rgba(0,0,0,0.10);
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #059669, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   </style>
 </head>
+<body class="text-gray-800">
 
-<body class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div>
+        <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900">Online Service Portal</h1>
+        <p class="text-sm text-gray-600 mt-1">Fast • Trusted • Affordable</p>
+      </div>
+      <a href="https://wa.me/917085193286"
+         class="hidden md:inline-flex bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded-2xl shadow-lg transition">
+        WhatsApp Now
+      </a>
+    </div>
+  </header>
 
-<!-- Header -->
-<header class="bg-gradient-to-r from-green-600 to-emerald-500 text-white p-6 shadow-xl">
-  <h1 class="text-3xl font-bold">Online Service Portal</h1>
-  <p class="text-sm mt-1">Fast • Trusted • Affordable</p>
-</header>
+  <!-- Hero -->
+  <section class="max-w-7xl mx-auto px-6 pt-12 pb-10">
+    <div class="glass rounded-[2rem] shadow-2xl border border-white/50 overflow-hidden">
+      <div class="grid lg:grid-cols-2 gap-8 items-center p-8 md:p-12">
+        <div>
+          <span class="inline-block bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-medium mb-4">
+            Online Help for Students & Job Seekers
+          </span>
+          <h2 class="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">
+            All Your <span class="gradient-text">Online Work</span> in One Place
+          </h2>
+          <p class="mt-5 text-lg text-gray-600 leading-relaxed">
+            Typing, forms, admissions, resumes, editing, posters and more — completed quickly, clearly, and professionally.
+          </p>
 
-<!-- Hero -->
-<section class="p-8 text-center">
-  <h2 class="text-4xl font-bold mb-3">All Your Online Work in One Place</h2>
-  <p class="mb-6 text-lg">Typing, forms, jobs, scholarships & more — done quickly and professionally.</p>
-  <a href="https://wa.me/917085193286" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-2xl shadow-lg">
-    Contact on WhatsApp
-  </a>
-</section>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="https://wa.me/917085193286"
+               class="bg-green-600 hover:bg-green-700 text-white px-7 py-3.5 rounded-2xl shadow-lg transition">
+              Contact on WhatsApp
+            </a>
+            <a href="#pricing"
+               class="bg-white hover:bg-gray-100 text-gray-800 px-7 py-3.5 rounded-2xl border border-gray-200 shadow-sm transition">
+              View Pricing
+            </a>
+          </div>
 
-<!-- Services -->
-<section class="p-8">
-  <h2 class="text-2xl font-semibold mb-6 text-center">Services</h2>
-  <div class="grid md:grid-cols-3 gap-6">
+          <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+            <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
+              <div class="font-bold text-lg text-gray-900">₹30</div>
+              <div class="text-gray-600">English typing / page</div>
+            </div>
+            <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
+              <div class="font-bold text-lg text-gray-900">₹50</div>
+              <div class="text-gray-600">Manipuri typing / page</div>
+            </div>
+            <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 col-span-2 md:col-span-1">
+              <div class="font-bold text-lg text-gray-900">Proofing</div>
+              <div class="text-gray-600">Hard copy included</div>
+            </div>
+          </div>
+        </div>
 
-    <div class="bg-white p-5 rounded-2xl shadow-lg"><b>Typing</b><p>English & Manipuri typing with proofing</p></div>
-    <div class="bg-white p-5 rounded-2xl shadow-lg"><b>Resume Making</b><p>Professional CV/Resume creation</p></div>
-    <div class="bg-white p-5 rounded-2xl shadow-lg"><b>PDF Editing</b><p>Edit, convert, merge PDF files</p></div>
-    <div class="bg-white p-5 rounded-2xl shadow-lg"><b>Photo Editing</b><p>Enhance, retouch & background edit</p></div>
-    <div class="bg-white p-5 rounded-2xl shadow-lg"><b>Poster Making</b><p>Custom posters & designs</p></div>
-    <div class="bg-white p-5 rounded-2xl shadow-lg"><b>Form Fill-Up</b><p>All online forms</p></div>
-    <div class="bg-white p-5 rounded-2xl shadow-lg"><b>Admissions</b><p>College & university help</p></div>
-    <div class="bg-white p-5 rounded-2xl shadow-lg"><b>Job Updates</b><p>Latest job alerts & apply help</p></div>
-    <div class="bg-white p-5 rounded-2xl shadow-lg"><b>On-Site Service</b><p>I can visit your place (extra charges apply)</p></div>
+        <div class="relative">
+          <div class="bg-gradient-to-br from-green-600 via-emerald-500 to-blue-600 rounded-[2rem] p-8 text-white shadow-2xl">
+            <h3 class="text-2xl font-bold mb-5">Why Choose This Service?</h3>
+            <div class="space-y-4">
+              <div class="bg-white/10 rounded-2xl p-4">✔ Fast response on WhatsApp</div>
+              <div class="bg-white/10 rounded-2xl p-4">✔ Student-friendly pricing</div>
+              <div class="bg-white/10 rounded-2xl p-4">✔ Multiple digital services in one place</div>
+              <div class="bg-white/10 rounded-2xl p-4">✔ On-site help available with extra charge</div>
+              <div class="bg-white/10 rounded-2xl p-4">✔ Suitable for forms, resumes, admissions and design work</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  </div>
-</section>
+  <!-- Services -->
+  <section class="max-w-7xl mx-auto px-6 py-8">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">My Services</h2>
+      <p class="text-gray-600 mt-3">Everything you need for online work, design and digital help.</p>
+    </div>
 
-<!-- Pricing -->
-<section class="p-8 bg-white rounded-3xl shadow-xl mx-4">
-  <h2 class="text-2xl font-semibold mb-4">Typing Pricing</h2>
-  <ul class="space-y-2">
-    <li>English Typing: ₹30/page</li>
-    <li>Manipuri Typing: ₹50/page</li>
-    <li class="text-sm text-gray-600">✔ Hard copy proofing included</li>
-  </ul>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 card-hover">
+        <h3 class="text-xl font-bold mb-2">Typing</h3>
+        <p class="text-gray-600">English & Manipuri typing with proofing support.</p>
+      </div>
 
-  <h2 class="text-2xl font-semibold mt-6 mb-4">Design & Editing</h2>
-  <ul class="space-y-2">
-    <li>Resume: ₹100–₹300</li>
-    <li>PDF Editing: ₹50–₹150</li>
-    <li>Photo Editing: ₹50–₹200</li>
-    <li>Poster: ₹100–₹300</li>
-  </ul>
+      <div class="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 card-hover">
+        <h3 class="text-xl font-bold mb-2">Resume Making</h3>
+        <p class="text-gray-600">Professional CV and resume creation for students and job seekers.</p>
+      </div>
 
-  <h2 class="text-2xl font-semibold mt-6 mb-4">Other Services</h2>
-  <ul class="space-y-2">
-    <li>Forms: ₹50–₹200</li>
-    <li>Admission: ₹100–₹500</li>
-    <li>On-Site: Extra charges</li>
-  </ul>
-</section>
+      <div class="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 card-hover">
+        <h3 class="text-xl font-bold mb-2">PDF Editing</h3>
+        <p class="text-gray-600">Edit, convert, merge and organize PDF files neatly.</p>
+      </div>
 
-<!-- Order Form -->
-<section class="p-8 bg-white rounded-3xl shadow-xl mx-4">
-  <h2 class="text-2xl font-semibold mb-4">Send Your Work</h2>
+      <div class="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 card-hover">
+        <h3 class="text-xl font-bold mb-2">Photo Editing</h3>
+        <p class="text-gray-600">Background clean-up, retouching and image enhancement.</p>
+      </div>
 
-  <input type="text" id="name" placeholder="Your Name" class="w-full p-3 border rounded-xl mb-3">
-  <input type="text" id="work" placeholder="Type of Work" class="w-full p-3 border rounded-xl mb-3">
-  <textarea id="desc" placeholder="Describe your work" class="w-full p-3 border rounded-xl mb-3"></textarea>
+      <div class="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 card-hover">
+        <h3 class="text-xl font-bold mb-2">Poster Making</h3>
+        <p class="text-gray-600">Custom posters, notices and attractive social media designs.</p>
+      </div>
 
-  <p class="text-sm text-gray-600 mb-3">
-    📎 After submitting, please send your file directly on WhatsApp.
-  </p>
+      <div class="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 card-hover">
+        <h3 class="text-xl font-bold mb-2">Form Fill-Up</h3>
+        <p class="text-gray-600">All kinds of online form filling support and submission help.</p>
+      </div>
 
-  <button onclick="sendToWhatsApp()" class="bg-green-600 text-white px-6 py-3 rounded-xl">
-    Submit
-  </button>
-</section>
+      <div class="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 card-hover">
+        <h3 class="text-xl font-bold mb-2">Admissions</h3>
+        <p class="text-gray-600">College and university admission assistance.</p>
+      </div>
 
-<!-- Payment -->
-<section class="p-8 text-center">
-  <h2 class="text-2xl font-semibold mb-4">Payment</h2>
-  <img src="qr.png" class="mx-auto w-48 rounded-xl mb-3">
-  <p>UPI ID: pokechtoi99@oksbi</p>
-  <p class="text-sm">Pay only after confirmation</p>
-</section>
+      <div class="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 card-hover">
+        <h3 class="text-xl font-bold mb-2">Job Updates</h3>
+        <p class="text-gray-600">Latest job information and application support.</p>
+      </div>
 
-<!-- Footer -->
-<footer class="bg-gray-900 text-white text-center p-4 mt-8">
-  © 2026 Online Service Portal
-</footer>
+      <div class="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 card-hover">
+        <h3 class="text-xl font-bold mb-2">On-Site Service</h3>
+        <p class="text-gray-600">I can visit your place and complete the work. Extra charges apply.</p>
+      </div>
+    </div>
+  </section>
 
-<script>
-function sendToWhatsApp() {
-  let name = document.getElementById("name").value;
-  let work = document.getElementById("work").value;
-  let desc = document.getElementById("desc").value;
+  <!-- Pricing -->
+  <section id="pricing" class="max-w-7xl mx-auto px-6 py-10">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Pricing</h2>
+      <p class="text-gray-600 mt-3">Clear pricing for trust and easy understanding.</p>
+    </div>
 
-  let msg = `Hello, I want service.%0AName: ${name}%0AWork: ${work}%0ADetails: ${desc}%0A(I will send file separately)`;
+    <div class="grid lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-7">
+        <h3 class="text-2xl font-bold text-green-700 mb-5">Typing</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li>English Typing: <b>₹30 / page</b></li>
+          <li>Manipuri Typing: <b>₹50 / page</b></li>
+          <li class="text-sm text-gray-500">✔ Hard copy proofing included</li>
+        </ul>
+      </div>
 
-  window.open(`https://wa.me/917085193286?text=${msg}`);
-}
-</script>
+      <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-7">
+        <h3 class="text-2xl font-bold text-blue-700 mb-5">Design & Editing</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li>Resume Making: <b>₹100 – ₹300</b></li>
+          <li>PDF Editing: <b>₹50 – ₹150</b></li>
+          <li>Photo Editing: <b>₹50 – ₹200</b></li>
+          <li>Poster Making: <b>₹100 – ₹300</b></li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-7">
+        <h3 class="text-2xl font-bold text-emerald-700 mb-5">Other Services</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li>Form Fill-Up: <b>₹50 – ₹200</b></li>
+          <li>Admission Help: <b>₹100 – ₹500</b></li>
+          <li>On-Site Visit: <b>Extra charges</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Form -->
+  <section class="max-w-5xl mx-auto px-6 py-10">
+    <div class="bg-white rounded-[2rem] shadow-2xl border border-gray-100 p-8 md:p-10">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Send Your Work Details</h2>
+        <p class="text-gray-600 mt-3">Fill in the details below, then continue on WhatsApp.</p>
+      </div>
+
+      <div class="space-y-4">
+        <input type="text" id="name" placeholder="Your Name"
+               class="w-full p-4 border border-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-green-500">
+
+        <input type="text" id="work" placeholder="Type of Work"
+               class="w-full p-4 border border-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-green-500">
+
+        <textarea id="desc" rows="5" placeholder="Describe your work"
+                  class="w-full p-4 border border-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-green-500"></textarea>
+
+        <div class="bg-green-50 border border-green-100 rounded-2xl p-4 text-sm text-green-800">
+          📎 After submitting, please send your file directly on WhatsApp.
+        </div>
+
+        <button onclick="sendToWhatsApp()"
+                class="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-2xl font-semibold shadow-lg transition">
+          Submit on WhatsApp
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment + Contact QR -->
+  <section class="max-w-7xl mx-auto px-6 py-10">
+    <div class="grid lg:grid-cols-2 gap-6">
+      <div class="bg-white rounded-[2rem] shadow-xl border border-gray-100 p-8 text-center">
+        <h2 class="text-2xl font-bold mb-5">Payment</h2>
+        <img src="qr.png" alt="UPI QR" class="mx-auto w-56 rounded-2xl shadow-lg mb-4">
+        <p class="text-lg font-semibold text-gray-900">UPI ID: pokechtoi99@oksbi</p>
+        <p class="text-sm text-gray-600 mt-2">Scan the QR or use the UPI ID to pay.</p>
+        <p class="text-sm text-red-500 mt-1">Pay only after confirmation.</p>
+      </div>
+
+      <div class="bg-white rounded-[2rem] shadow-xl border border-gray-100 p-8 text-center">
+        <h2 class="text-2xl font-bold mb-5">Scan to Contact</h2>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://wa.me/917085193286"
+             alt="Contact QR" class="mx-auto rounded-2xl shadow-lg mb-4">
+        <p class="text-gray-600">Scan this QR code to contact me directly on WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Share -->
+  <section class="max-w-4xl mx-auto px-6 py-4 text-center">
+    <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-[2rem] shadow-xl p-8">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3">Share This Service</h2>
+      <p class="text-white/90 mb-5">Help others discover this service by sharing the website.</p>
+      <button onclick="shareSite()"
+              class="bg-white text-blue-700 hover:bg-gray-100 px-7 py-3 rounded-2xl font-semibold shadow transition">
+        Share Now
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-12 bg-gray-950 text-gray-300">
+    <div class="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-6 items-center">
+      <div>
+        <h3 class="text-2xl font-bold text-white">Online Service Portal</h3>
+        <p class="mt-2 text-sm text-gray-400">Fast • Trusted • Affordable</p>
+        <p class="mt-4 text-sm text-gray-400">
+          Typing, forms, admissions, resumes, editing and more — all in one place.
+        </p>
+      </div>
+      <div class="md:text-right">
+        <a href="https://wa.me/917085193286"
+           class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-2xl shadow-lg transition">
+          Contact on WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 text-center text-sm text-gray-500 py-4">
+      © 2026 Online Service Portal. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    function sendToWhatsApp() {
+      const name = document.getElementById("name").value.trim();
+      const work = document.getElementById("work").value.trim();
+      const desc = document.getElementById("desc").value.trim();
+
+      const msg =
+        `Hello, I want service.%0A` +
+        `Name: ${name}%0A` +
+        `Work: ${work}%0A` +
+        `Details: ${desc}%0A` +
+        `(I will send file separately on WhatsApp)`;
+
+      window.open(`https://wa.me/917085193286?text=${msg}`, '_blank');
+    }
+
+    function shareSite() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Online Service Portal',
+          text: 'Get online work done fast and easily.',
+          url: window.location.href
+        });
+      } else {
+        alert('Copy this link and share: ' + window.location.href);
+      }
+    }
+  </script>
 
 </body>
 </html>
