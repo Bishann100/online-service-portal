@@ -3,35 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Online Service Portal | Typing, Forms, Resume & Editing Services</title>
+  <title>Online Service Portal | Typing, Resume, Forms & Editing Services</title>
+  <meta name="description" content="Online Service Portal offers typing, resume making, form fill-up, admission help, photo editing, poster making, and digital services." />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    * {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
     body {
       background:
-        radial-gradient(circle at top left, rgba(16,185,129,0.18), transparent 30%),
-        radial-gradient(circle at top right, rgba(59,130,246,0.12), transparent 25%),
+        radial-gradient(circle at top left, rgba(16,185,129,0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(59,130,246,0.10), transparent 25%),
         linear-gradient(to bottom right, #f8fafc, #e5e7eb);
     }
+
     .glass {
       background: rgba(255,255,255,0.72);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
+
     .card-hover {
       transition: all 0.3s ease;
     }
+
     .card-hover:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 35px rgba(0,0,0,0.10);
+      transform: translateY(-8px);
+      box-shadow: 0 22px 40px rgba(0,0,0,0.12);
     }
+
     .gradient-text {
       background: linear-gradient(90deg, #059669, #2563eb);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+
+    .hero-glow {
+      box-shadow: 0 25px 60px rgba(16, 185, 129, 0.15);
+    }
+
+    .section-title {
+      letter-spacing: -0.02em;
     }
   </style>
 </head>
@@ -39,31 +56,41 @@
 
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/40 shadow-sm">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
       <div>
         <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900">Online Service Portal</h1>
         <p class="text-sm text-gray-600 mt-1">Fast • Trusted • Affordable</p>
       </div>
-      <a href="https://wa.me/917085193286"
-         class="hidden md:inline-flex bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded-2xl shadow-lg transition">
-        WhatsApp Now
-      </a>
+
+      <div class="hidden md:flex items-center gap-3">
+        <a href="https://wa.me/917085193286"
+           class="bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded-2xl shadow-lg transition">
+          WhatsApp Now
+        </a>
+        <a href="https://chat.whatsapp.com/JBmFB1ccrnF0yoEM2lVg5A"
+           target="_blank"
+           class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-2xl shadow-lg transition">
+          Join Group
+        </a>
+      </div>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="max-w-7xl mx-auto px-6 pt-12 pb-10">
-    <div class="glass rounded-[2rem] shadow-2xl border border-white/50 overflow-hidden">
+    <div class="glass rounded-[2rem] shadow-2xl border border-white/50 overflow-hidden hero-glow">
       <div class="grid lg:grid-cols-2 gap-8 items-center p-8 md:p-12">
         <div>
           <span class="inline-block bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-medium mb-4">
-            Online Help for Students & Job Seekers
+            Digital Help for Students, Job Seekers & Everyone
           </span>
-          <h2 class="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">
+
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900">
             All Your <span class="gradient-text">Online Work</span> in One Place
           </h2>
-          <p class="mt-5 text-lg text-gray-600 leading-relaxed">
-            Typing, forms, admissions, resumes, editing, posters and more — completed quickly, clearly, and professionally.
+
+          <p class="mt-5 text-lg text-gray-600 leading-relaxed max-w-2xl">
+            Typing, forms, resumes, admissions, posters, editing and digital support — completed quickly, clearly and professionally.
           </p>
 
           <div class="mt-8 flex flex-wrap gap-4">
@@ -71,6 +98,13 @@
                class="bg-green-600 hover:bg-green-700 text-white px-7 py-3.5 rounded-2xl shadow-lg transition">
               Contact on WhatsApp
             </a>
+
+            <a href="https://chat.whatsapp.com/JBmFB1ccrnF0yoEM2lVg5A"
+               target="_blank"
+               class="bg-blue-600 hover:bg-blue-700 text-white px-7 py-3.5 rounded-2xl shadow-lg transition">
+              Join WhatsApp Group
+            </a>
+
             <a href="#pricing"
                class="bg-white hover:bg-gray-100 text-gray-800 px-7 py-3.5 rounded-2xl border border-gray-200 shadow-sm transition">
               View Pricing
@@ -82,10 +116,12 @@
               <div class="font-bold text-lg text-gray-900">₹30</div>
               <div class="text-gray-600">English typing / page</div>
             </div>
+
             <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
               <div class="font-bold text-lg text-gray-900">₹50</div>
               <div class="text-gray-600">Manipuri typing / page</div>
             </div>
+
             <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 col-span-2 md:col-span-1">
               <div class="font-bold text-lg text-gray-900">Proofing</div>
               <div class="text-gray-600">Hard copy included</div>
@@ -96,12 +132,19 @@
         <div class="relative">
           <div class="bg-gradient-to-br from-green-600 via-emerald-500 to-blue-600 rounded-[2rem] p-8 text-white shadow-2xl">
             <h3 class="text-2xl font-bold mb-5">Why Choose This Service?</h3>
+
             <div class="space-y-4">
               <div class="bg-white/10 rounded-2xl p-4">✔ Fast response on WhatsApp</div>
               <div class="bg-white/10 rounded-2xl p-4">✔ Student-friendly pricing</div>
               <div class="bg-white/10 rounded-2xl p-4">✔ Multiple digital services in one place</div>
-              <div class="bg-white/10 rounded-2xl p-4">✔ On-site help available with extra charge</div>
-              <div class="bg-white/10 rounded-2xl p-4">✔ Suitable for forms, resumes, admissions and design work</div>
+              <div class="bg-white/10 rounded-2xl p-4">✔ On-site help available with extra charges</div>
+              <div class="bg-white/10 rounded-2xl p-4">✔ Best for typing, forms, resumes, admissions and design work</div>
+            </div>
+
+            <div class="mt-6 bg-white/15 rounded-2xl p-4">
+              <p class="text-sm text-white/90">
+                Join the WhatsApp group to get updates, offers and priority service.
+              </p>
             </div>
           </div>
         </div>
@@ -112,8 +155,8 @@
   <!-- Services -->
   <section class="max-w-7xl mx-auto px-6 py-8">
     <div class="text-center mb-10">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">My Services</h2>
-      <p class="text-gray-600 mt-3">Everything you need for online work, design and digital help.</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 section-title">My Services</h2>
+      <p class="text-gray-600 mt-3">Everything you need for online work, editing and digital support.</p>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -167,12 +210,12 @@
   <!-- Pricing -->
   <section id="pricing" class="max-w-7xl mx-auto px-6 py-10">
     <div class="text-center mb-10">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Pricing</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 section-title">Pricing</h2>
       <p class="text-gray-600 mt-3">Clear pricing for trust and easy understanding.</p>
     </div>
 
     <div class="grid lg:grid-cols-3 gap-6">
-      <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-7">
+      <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-7 card-hover">
         <h3 class="text-2xl font-bold text-green-700 mb-5">Typing</h3>
         <ul class="space-y-3 text-gray-700">
           <li>English Typing: <b>₹30 / page</b></li>
@@ -181,7 +224,7 @@
         </ul>
       </div>
 
-      <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-7">
+      <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-7 card-hover">
         <h3 class="text-2xl font-bold text-blue-700 mb-5">Design & Editing</h3>
         <ul class="space-y-3 text-gray-700">
           <li>Resume Making: <b>₹100 – ₹300</b></li>
@@ -191,7 +234,7 @@
         </ul>
       </div>
 
-      <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-7">
+      <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-7 card-hover">
         <h3 class="text-2xl font-bold text-emerald-700 mb-5">Other Services</h3>
         <ul class="space-y-3 text-gray-700">
           <li>Form Fill-Up: <b>₹50 – ₹200</b></li>
@@ -202,11 +245,27 @@
     </div>
   </section>
 
+  <!-- Group Join Section -->
+  <section class="max-w-5xl mx-auto px-6 py-4">
+    <div class="bg-gradient-to-r from-green-600 via-emerald-500 to-blue-600 text-white rounded-[2rem] shadow-2xl p-8 md:p-10 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-3">Join My WhatsApp Group</h2>
+      <p class="text-white/90 mb-6 text-lg">
+        Get updates, offers, online work information and faster support.
+      </p>
+
+      <a href="https://chat.whatsapp.com/JBmFB1ccrnF0yoEM2lVg5A"
+         target="_blank"
+         class="inline-block bg-white text-green-700 hover:bg-gray-100 px-8 py-3.5 rounded-2xl font-semibold shadow-lg transition">
+        Join Group Now
+      </a>
+    </div>
+  </section>
+
   <!-- Order Form -->
   <section class="max-w-5xl mx-auto px-6 py-10">
     <div class="bg-white rounded-[2rem] shadow-2xl border border-gray-100 p-8 md:p-10">
       <div class="text-center mb-8">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Send Your Work Details</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 section-title">Send Your Work Details</h2>
         <p class="text-gray-600 mt-3">Fill in the details below, then continue on WhatsApp.</p>
       </div>
 
@@ -235,7 +294,7 @@
   <!-- Payment + Contact QR -->
   <section class="max-w-7xl mx-auto px-6 py-10">
     <div class="grid lg:grid-cols-2 gap-6">
-      <div class="bg-white rounded-[2rem] shadow-xl border border-gray-100 p-8 text-center">
+      <div class="bg-white rounded-[2rem] shadow-xl border border-gray-100 p-8 text-center card-hover">
         <h2 class="text-2xl font-bold mb-5">Payment</h2>
         <img src="qr.png" alt="UPI QR" class="mx-auto w-56 rounded-2xl shadow-lg mb-4">
         <p class="text-lg font-semibold text-gray-900">UPI ID: pokechtoi99@oksbi</p>
@@ -243,10 +302,11 @@
         <p class="text-sm text-red-500 mt-1">Pay only after confirmation.</p>
       </div>
 
-      <div class="bg-white rounded-[2rem] shadow-xl border border-gray-100 p-8 text-center">
+      <div class="bg-white rounded-[2rem] shadow-xl border border-gray-100 p-8 text-center card-hover">
         <h2 class="text-2xl font-bold mb-5">Scan to Contact</h2>
         <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://wa.me/917085193286"
-             alt="Contact QR" class="mx-auto rounded-2xl shadow-lg mb-4">
+             alt="Contact QR"
+             class="mx-auto rounded-2xl shadow-lg mb-4">
         <p class="text-gray-600">Scan this QR code to contact me directly on WhatsApp.</p>
       </div>
     </div>
@@ -274,13 +334,21 @@
           Typing, forms, admissions, resumes, editing and more — all in one place.
         </p>
       </div>
-      <div class="md:text-right">
+
+      <div class="md:text-right flex flex-col md:items-end gap-3">
         <a href="https://wa.me/917085193286"
            class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-2xl shadow-lg transition">
           Contact on WhatsApp
         </a>
+
+        <a href="https://chat.whatsapp.com/JBmFB1ccrnF0yoEM2lVg5A"
+           target="_blank"
+           class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-2xl shadow-lg transition">
+          Join WhatsApp Group
+        </a>
       </div>
     </div>
+
     <div class="border-t border-gray-800 text-center text-sm text-gray-500 py-4">
       © 2026 Online Service Portal. All rights reserved.
     </div>
