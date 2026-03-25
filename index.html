@@ -38,52 +38,7 @@
       }
     }
 
-    @keyframes slideTestimonials {
-      0%, 28% {
-        transform: translateX(0);
-      }
-      33%, 61% {
-        transform: translateX(-100%);
-      }
-      66%, 94% {
-        transform: translateX(-200%);
-      }
-      100% {
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes floatWhatsApp {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-6px);
-      }
-    }
-
-    .fade-up {
-      animation: fadeUp 0.9s ease forwards;
-    }
-
-    .float-soft {
-      animation: floatSoft 3.5s ease-in-out infinite;
-    }
-
-    .glow-pulse {
-      animation: glowPulse 2.4s ease-in-out infinite;
-    }
-
-    .testimonials-track {
-      display: flex;
-      width: 300%;
-      animation: slideTestimonials 12s infinite;
-    }
-
-    .testimonial-slide {
-      width: 100%;
-      flex-shrink: 0;
-    }
+    
 
     .floating-whatsapp {
       position: fixed;
@@ -109,7 +64,9 @@
 
   <!-- Hero -->
   <section class="p-8 text-center fade-up delay-1">
-    <h2 class="text-4xl font-bold mb-3 float-soft">All Your Online Work in One Place</h2>
+    <h2 class="text-4xl font-bold mb-3 float-soft">
+      <span id="typingText"></span>
+    </h2>
     <p class="mb-6 text-lg">Typing, forms, jobs, scholarships & more — done quickly and professionally.</p>
     <a href="https://wa.me/917085193286" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-2xl shadow-lg transition glow-pulse inline-block">Contact on WhatsApp</a>
   </section>
@@ -210,28 +167,20 @@
   </section>
 
   <!-- Testimonials -->
-  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 fade-up delay-4 overflow-hidden">
-    <h2 class="text-2xl font-semibold mb-4 text-center">Testimonials</h2>
-    <div class="overflow-hidden">
-      <div class="testimonials-track">
-        <div class="testimonial-slide px-1">
-          <div class="p-5 bg-gray-100 rounded-2xl text-center">
-            <p class="italic text-lg">⭐ "Very fast and reliable service!"</p>
-            <p class="text-sm text-gray-600 mt-2">– Student Client</p>
-          </div>
-        </div>
-        <div class="testimonial-slide px-1">
-          <div class="p-5 bg-gray-100 rounded-2xl text-center">
-            <p class="italic text-lg">⭐ "Best for form fill-up and typing work."</p>
-            <p class="text-sm text-gray-600 mt-2">– College Student</p>
-          </div>
-        </div>
-        <div class="testimonial-slide px-1">
-          <div class="p-5 bg-gray-100 rounded-2xl text-center">
-            <p class="italic text-lg">⭐ "Quick response and very helpful."</p>
-            <p class="text-sm text-gray-600 mt-2">– Local Client</p>
-          </div>
-        </div>
+  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 fade-up delay-4">
+    <h2 class="text-2xl font-semibold mb-4">Testimonials</h2>
+    <div class="space-y-4">
+      <div class="p-4 bg-gray-100 rounded-xl">
+        <p class="italic">⭐ "Very fast and reliable service!"</p>
+        <p class="text-sm text-gray-600 mt-1">– Student Client</p>
+      </div>
+      <div class="p-4 bg-gray-100 rounded-xl">
+        <p class="italic">⭐ "Best for form fill-up and typing work."</p>
+        <p class="text-sm text-gray-600 mt-1">– College Student</p>
+      </div>
+      <div class="p-4 bg-gray-100 rounded-xl">
+        <p class="italic">⭐ "Quick response and very helpful."</p>
+        <p class="text-sm text-gray-600 mt-1">– Local Client</p>
       </div>
     </div>
     <p class="text-center text-sm text-gray-500 mt-4">(More real reviews will be added soon)</p>
@@ -285,12 +234,19 @@
       }
     }
 
-    function sendDriveLink() {
-      const link = document.getElementById('driveLink').value;
-      if (!link) return alert('Paste link first');
-      const message = `Google Drive File: ${link}`;
-      window.open(`https://wa.me/917085193286?text=${message}`, '_blank');
+    // Typing Effect
+    const text = "All Your Online Work in One Place";
+    let index = 0;
+
+    function typeEffect() {
+      if (index < text.length) {
+        document.getElementById("typingText").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 50);
+      }
     }
+
+    window.onload = typeEffect;
   </script>
 
   <!-- Send Files via WhatsApp -->
