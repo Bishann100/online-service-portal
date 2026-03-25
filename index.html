@@ -8,42 +8,88 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Poppins', sans-serif; }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatSoft {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @keyframes glowPulse {
+      0%, 100% {
+        box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+      }
+      50% {
+        box-shadow: 0 16px 38px rgba(16,185,129,0.28);
+      }
+    }
+
+    .fade-up {
+      animation: fadeUp 0.9s ease forwards;
+    }
+
+    .float-soft {
+      animation: floatSoft 3.5s ease-in-out infinite;
+    }
+
+    .glow-pulse {
+      animation: glowPulse 2.4s ease-in-out infinite;
+    }
+
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.3s; }
+    .delay-3 { animation-delay: 0.45s; }
+    .delay-4 { animation-delay: 0.6s; }
   </style>
 </head>
 <body class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800">
 
   <!-- Header -->
-  <header class="bg-gradient-to-r from-green-600 to-emerald-500 text-white p-6 shadow-xl">
+  <header class="bg-gradient-to-r from-green-600 to-emerald-500 text-white p-6 shadow-xl fade-up">
     <h1 class="text-3xl font-bold">Online Service Portal</h1>
     <p class="text-sm mt-1">Fast • Trusted • Affordable</p>
   </header>
 
   <!-- Hero -->
-  <section class="p-8 text-center">
-    <h2 class="text-4xl font-bold mb-3">All Your Online Work in One Place</h2>
+  <section class="p-8 text-center fade-up delay-1">
+    <h2 class="text-4xl font-bold mb-3 float-soft">All Your Online Work in One Place</h2>
     <p class="mb-6 text-lg">Typing, forms, jobs, scholarships & more — done quickly and professionally.</p>
-    <a href="https://wa.me/917085193286" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-2xl shadow-lg transition">Contact on WhatsApp</a>
+    <a href="https://wa.me/917085193286" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-2xl shadow-lg transition glow-pulse inline-block">Contact on WhatsApp</a>
   </section>
 
   <!-- Services -->
-  <section class="p-8">
+  <section class="p-8 fade-up delay-2">
     <h2 class="text-2xl font-semibold mb-6 text-center">Services</h2>
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition"><b>Typing</b><p>English & Manipuri typing with proofing</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition"><b>Resume Making</b><p>Professional CV/Resume creation</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition"><b>PDF Editing</b><p>Edit, convert, merge PDF files</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition"><b>Photo Editing</b><p>Enhance, retouch & background edit</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition"><b>Poster Making</b><p>Custom posters & designs</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition"><b>Form Fill-Up</b><p>All online forms</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition"><b>Admissions</b><p>College & university help</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition"><b>Job Updates</b><p>Latest job alerts & apply help</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition"><b>Certificate Registration</b><p>Exchange, income, domicile, PRC, SC and ST certificate registration for all districts. OBC certificate registration available for all districts except Imphal West.</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 transition"><b>On-Site Service</b><p>I can visit your place and complete the work (extra charges apply)</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>Typing</b><p>English & Manipuri typing with proofing</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>Resume Making</b><p>Professional CV/Resume creation</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>PDF Editing</b><p>Edit, convert, merge PDF files</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>Photo Editing</b><p>Enhance, retouch & background edit</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>Poster Making</b><p>Custom posters & designs</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>Form Fill-Up</b><p>All online forms</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>Admissions</b><p>College & university help</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>Job Updates</b><p>Latest job alerts & apply help</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>Certificate Registration</b><p>Exchange, income, domicile, PRC, SC and ST certificate registration for all districts. OBC certificate registration available for all districts except Imphal West.</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>On-Site Service</b><p>I can visit your place and complete the work (extra charges apply)</p></div>
     </div>
   </section>
 
   <!-- Certificate Registration Highlight -->
-  <section class="p-8 mx-4 mt-6 bg-gradient-to-r from-yellow-400 to-orange-400 text-black rounded-3xl shadow-xl">
+  <section class="p-8 mx-4 mt-6 bg-gradient-to-r from-yellow-400 to-orange-400 text-black rounded-3xl shadow-xl fade-up delay-2 float-soft">
     <h2 class="text-3xl font-bold mb-4 text-center">🔥 Certificate Registration Services</h2>
     <p class="text-lg mb-4 text-center">We provide fast and reliable certificate registration services for all districts.</p>
     <div class="grid md:grid-cols-2 gap-4 text-lg">
@@ -64,7 +110,7 @@
   </section>
 
   <!-- Pricing -->
-  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4">
+  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 fade-up delay-3">
     <h2 class="text-2xl font-semibold mb-4">Typing Pricing</h2>
     <ul class="space-y-3 text-lg">
       <li>English Typing: ₹30 per page</li>
@@ -89,7 +135,7 @@
   </section>
 
   <!-- Order Form -->
-  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4">
+  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 fade-up delay-3">
     <h2 class="text-2xl font-semibold mb-4">Send Your Work</h2>
     <form class="space-y-4">
       <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-xl" required>
@@ -100,9 +146,9 @@
   </section>
 
   <!-- Payment -->
-  <section class="p-8 text-center">
+  <section class="p-8 text-center fade-up delay-3">
     <h2 class="text-2xl font-semibold mb-4">Payment</h2>
-    <img src="qr.png" alt="UPI QR" class="mx-auto mb-4 rounded-2xl shadow-lg w-48">
+    <img src="qr.png" alt="UPI QR" class="mx-auto mb-4 rounded-2xl shadow-lg w-48 float-soft">
     <p class="text-lg font-medium">UPI ID: pokecthoi99@oksbi</p>
     <p class="text-sm">📸 Scan QR or use UPI ID to pay</p>
     <p class="text-sm">Pay only after confirmation</p>
@@ -115,13 +161,27 @@
   </section>
 
   <!-- QR Code -->
-  <section class="p-8 text-center bg-white rounded-3xl shadow-xl mx-4">
+  <section class="p-8 text-center bg-white rounded-3xl shadow-xl mx-4 fade-up delay-4">
     <h2 class="text-xl font-semibold mb-3">Scan to Contact</h2>
     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/917085193286" alt="QR Code" class="mx-auto">
   </section>
 
+  <!-- Rating Section -->
+  <section class="p-8 text-center bg-white rounded-3xl shadow-xl mx-4 mt-6 fade-up delay-4">
+    <h2 class="text-2xl font-semibold mb-3">⭐ Customer Rating</h2>
+    <div class="flex justify-center items-center gap-1 text-4xl mb-3 animate-pulse">
+      <span class="text-yellow-400">★</span>
+      <span class="text-yellow-400">★</span>
+      <span class="text-yellow-400">★</span>
+      <span class="text-yellow-400">★</span>
+      <span class="text-yellow-400">★</span>
+    </div>
+    <p class="text-3xl font-bold text-yellow-500">4.9 / 5</p>
+    <p class="text-sm text-gray-600 mt-2">Based on customer satisfaction</p>
+  </section>
+
   <!-- Testimonials -->
-  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4">
+  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 fade-up delay-4">
     <h2 class="text-2xl font-semibold mb-4">Testimonials</h2>
     <div class="space-y-4">
       <div class="p-4 bg-gray-100 rounded-xl">
@@ -141,7 +201,7 @@
   </section>
 
   <!-- Why Choose Me -->
-  <section class="p-8 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-3xl shadow-xl mx-4 mt-6">
+  <section class="p-8 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-3xl shadow-xl mx-4 mt-6 fade-up delay-4 glow-pulse">
     <h2 class="text-2xl font-semibold mb-4 text-center">Why Choose Me?</h2>
     <ul class="space-y-3 text-lg text-center">
       <li>✔ Fast delivery</li>
@@ -152,7 +212,7 @@
   </section>
 
   <!-- Security Notice -->
-  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 mt-6 text-center border-2 border-green-500">
+  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 mt-6 text-center border-2 border-green-500 fade-up delay-4">
     <h2 class="text-2xl font-semibold mb-3">🔐 Secure & Safe Service</h2>
     <p class="text-lg font-medium">Your documents are safe and confidential.</p>
     <p class="text-sm text-gray-600 mt-2">We respect your privacy and never share your personal data.</p>
@@ -193,7 +253,7 @@
   </script>
 
   <!-- Send Files via WhatsApp -->
-  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 mt-6 text-center">
+  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 mt-6 text-center fade-up delay-4">
     <h2 class="text-2xl font-semibold mb-4">Send Your Files</h2>
     <p class="mb-4">Click below and send your documents directly on WhatsApp.</p>
     <a href="https://wa.me/917085193286?text=Hello%2C%20I%20want%20to%20send%20my%20documents" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow">Send Files on WhatsApp</a>
@@ -212,7 +272,7 @@
       </script>
 
   <!-- Google Drive Upload -->
-  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 mt-6">
+  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 mt-6 fade-up delay-4">
     <h2 class="text-2xl font-semibold mb-4">Upload via Google Drive</h2>
     <p class="mb-2">Upload your file to Google Drive and paste the link below:</p>
     <input type="text" id="driveLink" placeholder="Paste Google Drive link" class="w-full p-2 border rounded mb-3">
