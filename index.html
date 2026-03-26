@@ -66,25 +66,31 @@
       }
     }
 
-    .hero-shimmer {
-      background: linear-gradient(90deg, rgba(255,255,255,0.92), rgba(255,255,255,0.65), rgba(255,255,255,0.92));
-      background-size: 200% 100%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: shimmer 4s linear infinite;
-    }
-
-    .typing-cursor {
-      display: inline-block;
-      border-right: 3px solid rgba(255,255,255,0.9);
-      padding-right: 4px;
-      animation: blinkCursor 0.8s step-end infinite;
-    }
+    
 
     .delay-1 { animation-delay: 0.15s; }
     .delay-2 { animation-delay: 0.3s; }
     .delay-3 { animation-delay: 0.45s; }
     .delay-4 { animation-delay: 0.6s; }
+
+    /* Global smooth hover effects */
+    .hover-smooth {
+      transition: all 0.3s ease;
+    }
+
+    .hover-smooth:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .btn-hover {
+      transition: all 0.3s ease;
+    }
+
+    .btn-hover:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(16,185,129,0.35);
+    }
   </style>
 </head>
 <body class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800">
@@ -97,27 +103,25 @@
 
   <!-- Hero -->
   <section class="p-8 text-center fade-up delay-1">
-    <h2 class="text-4xl font-bold mb-3 float-soft">
-      <span id="typingText" class="typing-cursor hero-shimmer"></span>
-    </h2>
+    <h2 class="text-4xl font-bold mb-3 float-soft">All Your Online Work in One Place</h2>
     <p class="mb-6 text-lg fade-up delay-2">Typing, forms, jobs, scholarships & more — done quickly and professionally.</p>
-    <a href="https://wa.me/917085193286" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-2xl shadow-lg transition glow-pulse inline-block">Contact on WhatsApp</a>
+    <a href="https://wa.me/917085193286" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-2xl shadow-lg transition glow-pulse inline-block btn-hover">Contact on WhatsApp</a>
   </section>
 
   <!-- Services -->
   <section class="p-8 fade-up delay-2">
     <h2 class="text-2xl font-semibold mb-6 text-center">Services</h2>
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>Typing</b><p>English & Manipuri typing with proofing</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>Resume Making</b><p>Professional CV/Resume creation</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>PDF Editing</b><p>Edit, convert, merge PDF files</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>Photo Editing</b><p>Enhance, retouch & background edit</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>Poster Making</b><p>Custom posters & designs</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>Form Fill-Up</b><p>All online forms</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>Admissions</b><p>College & university help</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>Job Updates</b><p>Latest job alerts & apply help</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>Certificate Registration</b><p>Exchange, income, domicile, PRC, SC and ST certificate registration for all districts. OBC certificate registration available for all districts except Imphal West.</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300"><b>On-Site Service</b><p>I can visit your place and complete the work (extra charges apply)</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>Typing</b><p>English & Manipuri typing with proofing</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>Resume Making</b><p>Professional CV/Resume creation</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>PDF Editing</b><p>Edit, convert, merge PDF files</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>Photo Editing</b><p>Enhance, retouch & background edit</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>Poster Making</b><p>Custom posters & designs</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>Form Fill-Up</b><p>All online forms</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>Admissions</b><p>College & university help</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>Job Updates</b><p>Latest job alerts & apply help</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>Certificate Registration</b><p>Exchange, income, domicile, PRC, SC and ST certificate registration for all districts. OBC certificate registration available for all districts except Imphal West.</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>On-Site Service</b><p>I can visit your place and complete the work (extra charges apply)</p></div>
     </div>
   </section>
 
@@ -242,7 +246,7 @@
     <p>© 2026 Online Service Portal</p>
   </footer>
 
-  <a href="https://wa.me/917085193286?text=Hello%2C%20I%20need%20help%20with%20your%20service" class="floating-whatsapp bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-full shadow-2xl font-semibold glow-pulse">
+  <a href="https://wa.me/917085193286?text=Hello%2C%20I%20need%20help%20with%20your%20service" class="floating-whatsapp bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-full shadow-2xl font-semibold glow-pulse btn-hover">
     WhatsApp
   </a>
 
@@ -267,46 +271,7 @@
       }
     }
 
-    // Typing Effect
-    const texts = [
-      "All Your Online Work in One Place",
-      "Typing, Resume, Forms & Certificates",
-      "Fast • Trusted • Affordable"
-    ];
-    let textIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    function typeEffect() {
-      const currentText = texts[textIndex];
-      const typingElement = document.getElementById("typingText");
-
-      if (!isDeleting) {
-        typingElement.innerHTML = currentText.substring(0, charIndex + 1);
-        charIndex++;
-
-        if (charIndex === currentText.length) {
-          isDeleting = true;
-          setTimeout(typeEffect, 1400);
-          return;
-        }
-      } else {
-        typingElement.innerHTML = currentText.substring(0, charIndex - 1);
-        charIndex--;
-
-        if (charIndex === 0) {
-          isDeleting = false;
-          textIndex = (textIndex + 1) % texts.length;
-        }
-      }
-
-      const speed = isDeleting ? 35 : 70;
-      setTimeout(typeEffect, speed);
-    }
-
-    window.onload = function() {
-      typeEffect();
-    };
+    
   </script>
 
   <!-- Send Files via WhatsApp -->
@@ -333,7 +298,7 @@
     <h2 class="text-2xl font-semibold mb-4">Upload via Google Drive</h2>
     <p class="mb-2">Upload your file to Google Drive and paste the link below:</p>
     <input type="text" id="driveLink" placeholder="Paste Google Drive link" class="w-full p-2 border rounded mb-3">
-    <button onclick="sendDriveLink()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded">Send Link on WhatsApp</button>
+    <button onclick="sendDriveLink()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded btn-hover">Send Link on WhatsApp</button>
   </section>
 
   <!-- SEO Meta (Google Ranking) -->
