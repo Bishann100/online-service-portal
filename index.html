@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Online Service Portal</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: 'Poppins', sans-serif; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      background: linear-gradient(to bottom right, #f3f4f6, #e5e7eb);
+    }
 
     @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(35px);
       }
       to {
         opacity: 1;
@@ -31,56 +36,47 @@
 
     @keyframes glowPulse {
       0%, 100% {
-        box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.14);
       }
       50% {
-        box-shadow: 0 16px 38px rgba(16,185,129,0.28);
+        box-shadow: 0 16px 38px rgba(16, 185, 129, 0.28);
       }
     }
 
-    
-
-    .floating-whatsapp {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 50;
-      animation: floatWhatsApp 2.2s ease-in-out infinite;
-    }
-
-    @keyframes shimmer {
-      0% {
-        background-position: -200% 0;
+    @keyframes floatWhatsApp {
+      0%, 100% {
+        transform: translateY(0);
       }
-      100% {
-        background-position: 200% 0;
+      50% {
+        transform: translateY(-6px);
       }
     }
 
-    @keyframes blinkCursor {
-      0%, 50% {
-        border-color: rgba(255,255,255,0.9);
-      }
-      51%, 100% {
-        border-color: transparent;
-      }
-    }
-
-    
-
-    .delay-1 { animation-delay: 0.15s; }
-    .delay-2 { animation-delay: 0.3s; }
-    .delay-3 { animation-delay: 0.45s; }
-    .delay-4 { animation-delay: 0.6s; }
-
-    /* Global smooth hover effects */
-    .hover-smooth {
+    .fade-up {
+      opacity: 0;
+      transform: translateY(35px);
       transition: all 0.3s ease;
+    }
+
+    .fade-up.show {
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .float-soft {
+      animation: floatSoft 3s ease-in-out infinite;
+    }
+
+    .glow-pulse {
+      animation: glowPulse 2.6s ease-in-out infinite;
+    }
+
+    .hover-smooth {
+      transition: all 0.35s ease;
     }
 
     .hover-smooth:hover {
       transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.20);
     }
 
     .btn-hover {
@@ -91,42 +87,126 @@
       transform: scale(1.05);
       box-shadow: 0 12px 25px rgba(16,185,129,0.35);
     }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 999;
+      animation: floatWhatsApp 2.2s ease-in-out infinite;
+    }
+
+    .glass-card {
+      background: rgba(17, 24, 39, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: white;
+    }
+
+    .glass-light {
+      background: rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .counter-box {
+      background: rgba(255,255,255,0.16);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .sticky-blur {
+      background: rgba(17, 24, 39, 0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
   </style>
 </head>
-<body class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800">
+<body class="text-gray-800">
 
-  <!-- Header -->
-  <header class="bg-gradient-to-r from-green-600 to-emerald-500 text-white p-6 shadow-xl fade-up glow-pulse">
-    <h1 class="text-3xl font-bold">Online Service Portal</h1>
-    <p class="text-sm mt-1">Fast • Trusted • Affordable</p>
-  </header>
+  <!-- Sticky Navbar -->
+  <nav class="sticky top-0 z-[1000] sticky-blur text-white shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div>
+        <h1 class="text-xl md:text-2xl font-bold">Online Service Portal</h1>
+        <p class="text-xs text-gray-300">Fast • Trusted • Affordable</p>
+      </div>
+      <div class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="#services" class="hover:text-emerald-300 transition">Services</a>
+        <a href="#offer" class="hover:text-emerald-300 transition">Offer</a>
+        <a href="#pricing" class="hover:text-emerald-300 transition">Pricing</a>
+        <a href="#contact" class="hover:text-emerald-300 transition">Contact</a>
+      </div>
+      <a href="https://wa.me/917085193286?text=Hello%2C%20I%20want%20your%20service"
+         class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-xl text-sm font-semibold btn-hover">
+        WhatsApp
+      </a>
+    </div>
+  </nav>
 
   <!-- Hero -->
-  <section class="p-8 text-center fade-up delay-1">
-    <h2 class="text-4xl font-bold mb-3 float-soft">All Your Online Work in One Place</h2>
-    <p class="mb-6 text-lg fade-up delay-2">Typing, forms, jobs, scholarships & more — done quickly and professionally.</p>
-    <a href="https://wa.me/917085193286" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-2xl shadow-lg transition glow-pulse inline-block btn-hover">Contact on WhatsApp</a>
+  <section class="p-8 md:p-12 text-center fade-up show">
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-3 float-soft">All Your Online Work in One Place</h2>
+    <p class="mb-6 text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+      Typing, forms, jobs, scholarships, certificates, resume making and more — done quickly and professionally.
+    </p>
+    <a href="https://wa.me/917085193286?text=Hello%2C%20I%20need%20help%20with%20your%20service"
+       class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-2xl shadow-lg inline-block btn-hover">
+      Contact on WhatsApp
+    </a>
   </section>
 
-  <!-- Services -->
-  <section class="p-8 fade-up delay-2">
-    <h2 class="text-2xl font-semibold mb-6 text-center">Services</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>Typing</b><p>English & Manipuri typing with proofing</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>Resume Making</b><p>Professional CV/Resume creation</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>PDF Editing</b><p>Edit, convert, merge PDF files</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>Photo Editing</b><p>Enhance, retouch & background edit</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>Poster Making</b><p>Custom posters & designs</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>Form Fill-Up</b><p>All online forms</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>Admissions</b><p>College & university help</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>Job Updates</b><p>Latest job alerts & apply help</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>Certificate Registration</b><p>Exchange, income, domicile, PRC, SC and ST certificate registration for all districts. OBC certificate registration available for all districts except Imphal West.</p></div>
-      <div class="bg-white p-5 rounded-2xl shadow-lg hover-smooth"><b>On-Site Service</b><p>I can visit your place and complete the work (extra charges apply)</p></div>
+  <!-- Animated Counters -->
+  <section class="px-4 md:px-8 fade-up">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="counter-box rounded-3xl p-6 text-center shadow-xl">
+        <h3 class="text-4xl font-extrabold text-green-700 counter" data-target="500">0</h3>
+        <p class="mt-2 text-gray-700 font-medium">Works Completed</p>
+      </div>
+      <div class="counter-box rounded-3xl p-6 text-center shadow-xl">
+        <h3 class="text-4xl font-extrabold text-green-700 counter" data-target="200">0</h3>
+        <p class="mt-2 text-gray-700 font-medium">Happy Clients</p>
+      </div>
+      <div class="counter-box rounded-3xl p-6 text-center shadow-xl">
+        <h3 class="text-4xl font-extrabold text-green-700 counter" data-target="24">0</h3>
+        <p class="mt-2 text-gray-700 font-medium">Fast Support Hours</p>
+      </div>
     </div>
   </section>
 
-  <!-- Certificate Registration Highlight -->
-  <section class="p-8 mx-4 mt-6 bg-gradient-to-r from-yellow-400 to-orange-400 text-black rounded-3xl shadow-xl fade-up delay-2 float-soft">
+  <!-- Offer Section -->
+  <section id="offer" class="p-8 mx-4 mt-8 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-3xl shadow-xl text-center fade-up glow-pulse hover-smooth">
+    <h2 class="text-3xl font-bold mb-3">🎁 Special Offer</h2>
+    <p class="text-lg font-medium mb-4">Get ₹50 OFF on your first order</p>
+    <a href="https://wa.me/917085193286?text=Hello%2C%20I%20want%20to%20claim%20my%20first-time%20discount%20of%20₹50"
+       class="bg-white text-green-600 px-6 py-3 rounded-xl font-semibold shadow btn-hover inline-block">
+      Claim Offer Now
+    </a>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="p-8 fade-up">
+    <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-center">Services</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="glass-card p-5 rounded-2xl shadow-lg hover-smooth"><b>Typing</b><p class="mt-2 text-gray-200">English & Manipuri typing with proofing</p></div>
+      <div class="glass-card p-5 rounded-2xl shadow-lg hover-smooth"><b>Resume Making</b><p class="mt-2 text-gray-200">Professional CV/Resume creation</p></div>
+      <div class="glass-card p-5 rounded-2xl shadow-lg hover-smooth"><b>PDF Editing</b><p class="mt-2 text-gray-200">Edit, convert, merge PDF files</p></div>
+      <div class="glass-card p-5 rounded-2xl shadow-lg hover-smooth"><b>Photo Editing</b><p class="mt-2 text-gray-200">Enhance, retouch & background edit</p></div>
+      <div class="glass-card p-5 rounded-2xl shadow-lg hover-smooth"><b>Poster Making</b><p class="mt-2 text-gray-200">Custom posters & designs</p></div>
+      <div class="glass-card p-5 rounded-2xl shadow-lg hover-smooth"><b>Form Fill-Up</b><p class="mt-2 text-gray-200">All online forms</p></div>
+      <div class="glass-card p-5 rounded-2xl shadow-lg hover-smooth"><b>Admissions</b><p class="mt-2 text-gray-200">College & university help</p></div>
+      <div class="glass-card p-5 rounded-2xl shadow-lg hover-smooth"><b>Job Updates</b><p class="mt-2 text-gray-200">Latest job alerts & apply help</p></div>
+      <div class="glass-card p-5 rounded-2xl shadow-lg hover-smooth"><b>Certificate Registration</b><p class="mt-2 text-gray-200">Exchange, income, domicile, PRC, SC and ST certificate registration. OBC available except Imphal West.</p></div>
+      <div class="glass-card p-5 rounded-2xl shadow-lg hover-smooth"><b>On-Site Service</b><p class="mt-2 text-gray-200">I can visit your place and complete the work (extra charges apply)</p></div>
+    </div>
+  </section>
+
+  <!-- Certificate Highlight -->
+  <section class="p-8 mx-4 mt-6 bg-gradient-to-r from-yellow-400 to-orange-400 text-black rounded-3xl shadow-xl fade-up float-soft">
     <h2 class="text-3xl font-bold mb-4 text-center">🔥 Certificate Registration Services</h2>
     <p class="text-lg mb-4 text-center">We provide fast and reliable certificate registration services for all districts.</p>
     <div class="grid md:grid-cols-2 gap-4 text-lg">
@@ -147,12 +227,12 @@
   </section>
 
   <!-- Pricing -->
-  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 fade-up delay-3">
+  <section id="pricing" class="p-8 rounded-3xl shadow-xl mx-4 mt-6 fade-up glass-light">
     <h2 class="text-2xl font-semibold mb-4">Typing Pricing</h2>
     <ul class="space-y-3 text-lg">
       <li>English Typing: ₹30 per page</li>
       <li>Manipuri Typing: ₹50 per page</li>
-      <li class="text-sm text-gray-600">✔ Includes hard copy for proofing</li>
+      <li class="text-sm text-gray-700">✔ Includes hard copy for proofing</li>
     </ul>
 
     <h2 class="text-2xl font-semibold mt-6 mb-4">Design & Editing</h2>
@@ -171,19 +251,41 @@
     </ul>
   </section>
 
-  <!-- Order Form -->
-  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 fade-up delay-3">
+  <!-- Send Your Work -->
+  <section id="contact" class="p-8 rounded-3xl shadow-xl mx-4 mt-6 fade-up glass-light">
     <h2 class="text-2xl font-semibold mb-4">Send Your Work</h2>
     <form class="space-y-4">
-      <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-xl" required>
-      <input type="text" placeholder="Type of Work" class="w-full p-3 border rounded-xl" required>
-      <textarea placeholder="Describe your work" class="w-full p-3 border rounded-xl" required></textarea>
-      <button type="button" onclick="sendToWhatsApp()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow">Submit</button>
+      <input type="text" id="name" placeholder="Your Name" class="w-full p-3 border rounded-xl bg-white/90" required>
+      <input type="text" id="work" placeholder="Type of Work" class="w-full p-3 border rounded-xl bg-white/90" required>
+      <textarea id="desc" placeholder="Describe your work" class="w-full p-3 border rounded-xl bg-white/90" required></textarea>
+      <button type="button" onclick="sendToWhatsApp()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow btn-hover">
+        Submit
+      </button>
     </form>
   </section>
 
+  <!-- Send Files -->
+  <section class="p-8 rounded-3xl shadow-xl mx-4 mt-6 text-center fade-up glass-light">
+    <h2 class="text-2xl font-semibold mb-4">Send Your Files</h2>
+    <p class="mb-4">Click below and send your documents directly on WhatsApp.</p>
+    <a href="https://wa.me/917085193286?text=Hello%2C%20I%20want%20to%20send%20my%20documents"
+       class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow btn-hover inline-block">
+      Send Files on WhatsApp
+    </a>
+  </section>
+
+  <!-- Google Drive -->
+  <section class="p-8 rounded-3xl shadow-xl mx-4 mt-6 fade-up glass-light">
+    <h2 class="text-2xl font-semibold mb-4">Upload via Google Drive</h2>
+    <p class="mb-2">Upload your file to Google Drive and paste the link below:</p>
+    <input type="text" id="driveLink" placeholder="Paste Google Drive link" class="w-full p-3 border rounded-xl mb-3 bg-white/90">
+    <button onclick="sendDriveLink()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl btn-hover">
+      Send Link on WhatsApp
+    </button>
+  </section>
+
   <!-- Payment -->
-  <section class="p-8 text-center fade-up delay-3">
+  <section class="p-8 text-center fade-up">
     <h2 class="text-2xl font-semibold mb-4">Payment</h2>
     <img src="qr.png" alt="UPI QR" class="mx-auto mb-4 rounded-2xl shadow-lg w-48 float-soft">
     <p class="text-lg font-medium">UPI ID: pokecthoi99@oksbi</p>
@@ -192,39 +294,41 @@
   </section>
 
   <!-- Share -->
-  <section class="p-8 text-center">
+  <section class="p-8 text-center fade-up">
     <h2 class="text-xl font-semibold mb-3">Share This Service</h2>
-    <button onclick="shareSite()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-xl shadow">Share Now</button>
+    <button onclick="shareSite()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-xl shadow btn-hover">
+      Share Now
+    </button>
   </section>
 
-  <!-- QR Code -->
-  <section class="p-8 text-center bg-white rounded-3xl shadow-xl mx-4 fade-up delay-4">
+  <!-- QR -->
+  <section class="p-8 text-center rounded-3xl shadow-xl mx-4 fade-up glass-light">
     <h2 class="text-xl font-semibold mb-3">Scan to Contact</h2>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/917085193286" alt="QR Code" class="mx-auto">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/917085193286" alt="QR Code" class="mx-auto rounded-xl">
   </section>
 
   <!-- Testimonials -->
-  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 fade-up delay-4">
+  <section class="p-8 rounded-3xl shadow-xl mx-4 mt-6 fade-up glass-light">
     <h2 class="text-2xl font-semibold mb-4">Testimonials</h2>
     <div class="space-y-4">
-      <div class="p-4 bg-gray-100 rounded-xl">
+      <div class="glass-card p-4 rounded-xl hover-smooth">
         <p class="italic">⭐ "Very fast and reliable service!"</p>
-        <p class="text-sm text-gray-600 mt-1">– Student Client</p>
+        <p class="text-sm text-gray-300 mt-1">– Student Client</p>
       </div>
-      <div class="p-4 bg-gray-100 rounded-xl">
+      <div class="glass-card p-4 rounded-xl hover-smooth">
         <p class="italic">⭐ "Best for form fill-up and typing work."</p>
-        <p class="text-sm text-gray-600 mt-1">– College Student</p>
+        <p class="text-sm text-gray-300 mt-1">– College Student</p>
       </div>
-      <div class="p-4 bg-gray-100 rounded-xl">
+      <div class="glass-card p-4 rounded-xl hover-smooth">
         <p class="italic">⭐ "Quick response and very helpful."</p>
-        <p class="text-sm text-gray-600 mt-1">– Local Client</p>
+        <p class="text-sm text-gray-300 mt-1">– Local Client</p>
       </div>
     </div>
-    <p class="text-center text-sm text-gray-500 mt-4">(More real reviews will be added soon)</p>
+    <p class="text-center text-sm text-gray-700 mt-4">(More real reviews will be added soon)</p>
   </section>
 
   <!-- Why Choose Me -->
-  <section class="p-8 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-3xl shadow-xl mx-4 mt-6 fade-up delay-4 glow-pulse">
+  <section class="p-8 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-3xl shadow-xl mx-4 mt-6 fade-up glow-pulse">
     <h2 class="text-2xl font-semibold mb-4 text-center">Why Choose Me?</h2>
     <ul class="space-y-3 text-lg text-center">
       <li>✔ Fast delivery</li>
@@ -234,11 +338,11 @@
     </ul>
   </section>
 
-  <!-- Security Notice -->
-  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 mt-6 text-center border-2 border-green-500 fade-up delay-4">
+  <!-- Security -->
+  <section class="p-8 rounded-3xl shadow-xl mx-4 mt-6 text-center border border-green-500 fade-up glass-light">
     <h2 class="text-2xl font-semibold mb-3">🔐 Secure & Safe Service</h2>
     <p class="text-lg font-medium">Your documents are safe and confidential.</p>
-    <p class="text-sm text-gray-600 mt-2">We respect your privacy and never share your personal data.</p>
+    <p class="text-sm text-gray-700 mt-2">We respect your privacy and never share your personal data.</p>
   </section>
 
   <!-- Footer -->
@@ -246,16 +350,31 @@
     <p>© 2026 Online Service Portal</p>
   </footer>
 
-  <a href="https://wa.me/917085193286?text=Hello%2C%20I%20need%20help%20with%20your%20service" class="floating-whatsapp bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-full shadow-2xl font-semibold glow-pulse btn-hover">
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/917085193286?text=Hello%2C%20I%20need%20help%20with%20your%20service"
+     class="floating-whatsapp bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-full shadow-2xl font-semibold btn-hover">
     WhatsApp
   </a>
 
   <script>
     function sendToWhatsApp() {
-      const name = document.querySelector('input[placeholder="Your Name"]').value;
-      const work = document.querySelector('input[placeholder="Type of Work"]').value;
-      const desc = document.querySelector('textarea').value;
-      const message = `Name: ${name}%0AWork: ${work}%0ADetails: ${desc}`;
+      const name = document.getElementById('name').value;
+      const work = document.getElementById('work').value;
+      const desc = document.getElementById('desc').value;
+
+      const message = `Hello, I want your service.%0A%0AName: ${name}%0AType of Work: ${work}%0ADetails: ${desc}`;
+      window.open(`https://wa.me/917085193286?text=${message}`, '_blank');
+    }
+
+    function sendDriveLink() {
+      const driveLink = document.getElementById('driveLink').value;
+
+      if (!driveLink.trim()) {
+        alert('Please paste your Google Drive link first.');
+        return;
+      }
+
+      const message = `Hello, here is my Google Drive file link:%0A${encodeURIComponent(driveLink)}`;
       window.open(`https://wa.me/917085193286?text=${message}`, '_blank');
     }
 
@@ -271,48 +390,59 @@
       }
     }
 
-    
-  </script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.12 });
 
-  <!-- Send Files via WhatsApp -->
-  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 mt-6 text-center fade-up delay-4">
-    <h2 class="text-2xl font-semibold mb-4">Send Your Files</h2>
-    <p class="mb-4">Click below and send your documents directly on WhatsApp.</p>
-    <a href="https://wa.me/917085193286?text=Hello%2C%20I%20want%20to%20send%20my%20documents" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow">Send Files on WhatsApp</a>
-  </section>
+    document.querySelectorAll('.fade-up').forEach((el) => {
+      observer.observe(el);
+    });
 
-  
+    // Animated counters
+    let countersStarted = false;
+    const counters = document.querySelectorAll('.counter');
 
-  
+    function startCounters() {
+      if (countersStarted) return;
+      countersStarted = true;
 
-  <script>
-    
-    Amount: ₹${amount}`;
-      document.getElementById('invoiceOutput').innerText = invoice;
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+        const increment = Math.max(1, Math.ceil(target / 100));
+
+        const updateCounter = () => {
+          count += increment;
+          if (count < target) {
+            counter.innerText = count;
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.innerText = target + "+";
+          }
+        };
+
+        updateCounter();
+      });
     }
 
-      </script>
+    const counterSection = document.querySelector('.counter')?.closest('section');
+    if (counterSection) {
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            startCounters();
+          }
+        });
+      }, { threshold: 0.3 });
 
-  <!-- Google Drive Upload -->
-  <section class="p-8 bg-white rounded-3xl shadow-xl mx-4 mt-6 fade-up delay-4">
-    <h2 class="text-2xl font-semibold mb-4">Upload via Google Drive</h2>
-    <p class="mb-2">Upload your file to Google Drive and paste the link below:</p>
-    <input type="text" id="driveLink" placeholder="Paste Google Drive link" class="w-full p-2 border rounded mb-3">
-    <button onclick="sendDriveLink()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded btn-hover">Send Link on WhatsApp</button>
-  </section>
-
-  <!-- SEO Meta (Google Ranking) -->
-  <script>
-    document.title = "Online Service Portal | Typing, Resume, Forms & Admission Services";
+      counterObserver.observe(counterSection);
+    }
   </script>
-
-  
-
-  
-
-  <script>
-    
-      </script>
 
 </body>
 </html>
